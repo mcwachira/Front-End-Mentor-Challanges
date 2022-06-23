@@ -76,6 +76,6 @@ I also need to sharpen my Js skills and React skills.
 
 ## Author
 
-- Website - [https:www.mcwachira.dev](https:www.mcwachira.dev)
+- Website - [mcwachira](https:www.mcwachira.dev)
 - Frontend Mentor - [@mcwachira](https://www.frontendmentor.io/profile/mcwachira)
 - Twitter - [@mc_wachira](https://www.twitter.com/mc_wachira)
