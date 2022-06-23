@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+        margin: 0;
+        padding: 0;
+}
+.nav{
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem 3rem;
+}
+
+.logo{
+    width: 100%;
+}
+
+.try__button{
+        border: 2px solid #000;
+        background-color: #fff;
+        color: #000;
+        border-radius: 20px;
+        padding: 14px 18px;
+        font-size: 1.4rem;
+        width: 130%;
+        cursor: pointer;
+        border-color: hsl(322, 100%, 66%);
+        color: hsl(322, 100%, 66%);
+}
+
+
+.community{
+    width: 100%;
+    text-align: center;
+}
+
+.community >h1{
+    font-size: 3rem;
+}
+.community > p{
+    margin: 1.5rem auto;
+    padding: 0 2.5rem;
+    font-size: 1.3rem;
+}
+.get__started{
+  text-align: center;
+  margin: 1rem auto;
+  background-color: hsl(322, 100%, 66%);
+  border-radius: 20px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-color: hsl(322, 100%, 66%);
+  color: #fff;
+  margin-bottom: 3rem;
+}
+
+.community>.mockup__box{
+
+    display: flex;
+    justify-content: center;
+}
+.mockup__box>.screen__mockup {
+    width: 70%;
+}
+
+
+.community>.communities__messages{
+margin-top: 5rem;
+display: flex;
+justify-content: space-around;
+}
+
+.communities__formed>h2 {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.communities__formed>p {
+    font-size: 1.4rem;
+    color: hsl(322, 100%, 66%);
+    ;
+}
+
+.messages__sent.community-messages__svg {
+    width: 100%;
+    
+
+}
+
+.messages__sent>h2 {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+
+.messages__sent>p {
+    font-size: 1.4rem;
+    color: hsl(322, 100%, 66%);
+    ;
+}
+
+
+.features {
+    width: 100%;
+
+    
+}
+
+.grow, .conversations, .users{
+   display: flex;
+   flex-direction: row;
+   /* flex-wrap: wrap; */
+   width: 100%;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.feature__text{
+margin: 0 auto;
+width: 70%;
+font-size: 1.2rem;
+line-height: 1.2;
+}
+
+.feature__column {
+    /* display: flex;
+    flex-direction: column; */
+    /* flex-basis: 100%;
+    flex: 1; */
+}
+
+.page-wrapper {
+    margin: 10px;
+
+}
+
+.feature__img {
+  
+    width: 100%;
+    margin: 0 auto;
+}
+
+.feature-text-image,
+.conversation-svg,
+.together-svg,
+.users-svg {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+@media screen and(max-width:991px) {
+    .grow {
+
+        flex-direction: column !important;
+    }
+    /* .column {
+        flex-direction: row;
+    } */
+
+}
+
+
+.section__bottom {
+    margin:5rem auto ;
+    width: 100%;
+    text-align: center;
+}
+
+.section__bottom > button{
+    margin-top: 3rem;
+}
+.section__bottom--img{
+    width: 100%;
+}
+
+
+.bottom__img
+{
+    width:100%;
+}
+
+.footer{
+color: hsl(207, 100%, 98%);
+margin-bottom: 0;
+}
+.footer__container {
+    margin-top: -1rem;
+    background-color: #00252E;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+
+
+.footer__details{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    margin-left:3rem;
+    text-align: left;
+
+}
+
+.footer__img {
+    width: 100%;
+
+}
+
+.footer__logo {
+    background: #fff;
+
+    width: 30%;
+}
+
+.footer__text{
+    margin-top: 1rem;
+   
+}
+
+.footer__text > p{
+    width: 40%;
+    line-height: 1.2;
+}
+.footer__phone{
+margin: 1rem 0;
+    display: flex;
+  
+}
+
+.footer__mail{
+    margin: 1rem 0;
+    display: flex;
+
+}
+
+.footer__mail--img,
+.footer__phone--img{
+    margin-right: 1rem;
+}
+.footer__newsletter{
+
+ margin-top: 2rem;
+ margin-left: 5rem;
+}
+
+.newsletter__details{
+
+text-align: left;
+
+}
+
+.newsletter__details > p{
+    margin-top: 1rem;
+      width: 50%;
+      line-height: 1.2;
+}
+.newsletter__form{
+
+    margin-top: 1.5rem;
+    width: 100%;
+   text-align: left;
+  ;
+}
+
+
+.newsletter__input{
+    
+   padding: 10px 30px;
+     border-radius: 5px;
+     font-size: 1rem;
+     outline: none;
+     border: none;
+}
+
+
+.newsletter__button{
+ 
+ margin-left: 1rem;
+      background-color: hsl(322, 100%, 66%);
+      border-radius: 5px;
+      padding: 10px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+         outline: none;
+         border: none;
+      color: #fff;
+    
+
+}
+
+.footer__copyright{
+     background-color: #00252E;
+     font-size: 1.2rem;
+}
+
+.footer__copyright a{
+    text-decoration: none;
+}
