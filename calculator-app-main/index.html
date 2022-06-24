@@ -13,10 +13,10 @@
   <title>Frontend Mentor | Calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+  <!-- <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: 1 | }
-  </style>
+  </style> -->
 </head>
 <body>
 
@@ -42,43 +42,55 @@
 
 
 <section class="calculator__display">
- <h2 class="calculator__display--values" >
-  300,981
- </h2>
+<div class=" calculator__display--previous previous">
+
+
+</div>
+<div class="calculator__display--current current">
+
+</div>
 
 </section>
 
 <div class="calculator__keys">
   <div class="calculator__keys__rows">
+    <div class="calculator__keys--secondRow mathematics__functions">
+      <button class="number">sin</button>
+      <button class="number">cos</button>
+      <button class="number">tan</button>
+      <button class="operator">Log</button>
+    </div>
 <div class="calculator__keys--firstRow">
-  <button>7</button>
-  <button>8</button>
-  <button>9</button>
-  <button> Del</button>
+  <button class="number">7</button>
+  <button class="number">8</button>
+  <button class="number">9</button>
+  <button class="operator"> Del</button>
 
 </div>
+
 <div class="calculator__keys--secondRow">
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>+</button>
+    <button class="number">4</button>
+    <button class="number">5</button>
+    <button class="number">6</button>
+    <button class="operator">+</button>
 </div>
 <div class="calculator__keys--thirdRow">
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>4</button>
+    <button class="number">1</button>
+    <button class="number">2</button>
+    <button class="number">3</button>
+    <button class="number">4</button>
 </div>
 <div class="calculator__keys--forthRow">
-    <button>.</button>
-    <button>0</button>
-    <button>/</button>
-    <button>X</button>
+    <button class="number">.</button>
+    <button class="number">0</button>
+    <button class="operator">/</button>
+    <button class="operator">&times;</button>
 </div>
 <div class="calculator__keys--firthRow">
   
-  <button class="calculator__keys--firthRow--reset">Reset</button>
-  <button  class="calculator__keys--firthRow--equals"> = </button>
+  <button class="calculator__keys--firthRow--reset clear ">Reset</button>
+  <button class="calculator__keys--firthRow--equals operator"> % </button>
+  <button  class="calculator__keys--firthRow--equals equals"> = </button>
   
   </div>
 
@@ -92,5 +104,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
