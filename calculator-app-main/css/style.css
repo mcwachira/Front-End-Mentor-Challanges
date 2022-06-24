@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-size: 32px;
+    font-weight: 700;
+    height: 100vh;
+    background-color: hsl(268, 47%, 21%);
+    ;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    margin-top: 10rem;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.header__main{
+    margin-right: 18rem;
+}
+
+.calculator__display{
+    margin-top: 1rem;
+    background-color: hsl(268, 75%, 9%);
+    width: 40%;
+    height: 15vh;
+    border-radius: 5px;
+}
+
+.calculator__display--values{
+    display: flex;
+    justify-content: flex-end;
+    color: #fff;
+    margin-right: 1rem;
+}
+
+.calculator__keys{
+     margin-top: 1rem;
+     background-color: hsl(268, 75%, 9%);
+     width: 50%;
+     height:70vh;
+     border-radius: 5px;
+     margin-bottom: 10rem;
+    
+}
+
+.calculator__keys__rows{
+margin: 1rem  1rem;
+
+}
+
+.calculator__keys--firstRow,
+.calculator__keys--secondRow ,
+.calculator__keys--thirdRow,
+.calculator__keys--forthRow,
+.calculator__keys--firthRow {
+    margin: 1rem  auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:1rem;
+    row-gap: 1rem;
+    justify-items: center;
+}
+
+.calculator__keys--firstRow button,
+.calculator__keys--secondRow button,
+.calculator__keys--thirdRow button,
+.calculator__keys--forthRow button,
+.calculator__keys--firthRow button{
+       background-color: #fff;
+       border: none;
+       outline: none;
+       color: hsl(281, 89%, 26%);
+       box-shadow: hsl(285, 91%, 52%);
+       font-size:25px;
+       font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 7px;
+}
+
+.calculator__keys--firthRow >.calculator__keys--firthRow--reset {
+grid-column: 1 / 2;
+color: #fff;
+background-color: blueviolet;
+}
+
+.calculator__keys--firthRow > .calculator__keys--firthRow--equals {
+grid-column: 2 / 3;
+background-color: orangered;
+color: #fff;
+}
