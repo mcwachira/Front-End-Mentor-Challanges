@@ -40,8 +40,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Huddle github](https://github.com/mcwachira/Front-End-Mentor-Challanges/tree/main/huddle-landing-page-with-curved-sections-master)
-- Live Site URL: [Huddle-live](https://mcwachira-huddle-landing-page-with-curved-sections.netlify.app/)
+- Solution URL: [Huddle github](https://github.com/mcwachira/Front-End-Mentor-Challanges/tree/main/huddle-landing-page-with-single-introductory-section-master)
+- Live Site URL: [Huddle-live](https://mcwachira-huddle-landing-page-single-introduction.netlify.app/)
 
 
 
