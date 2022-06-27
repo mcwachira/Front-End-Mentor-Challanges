@@ -1,7 +1,10 @@
 
 
+
+
 const NumberButtons =document.querySelectorAll('.number');
 const OperatorButton = document.querySelectorAll('.operator');
+const SpecialOperatorButtons = document.querySelectorAll('.specialOperator')
 const ResetButton = document.querySelector('.clear')
 const DeleteButton = document.querySelector('.delete')
 const EqualsButton = document.querySelector('.equals')
@@ -22,7 +25,10 @@ class Calculator {
     clear(){
         this.currentOperand = "";
         this.previousOperand = "";
-        this.operator = undefined
+        this.specialOperator = undefined;
+        this.operator = undefined;
+      
+    
     }
 
     //delete and individual value from the screen
@@ -41,24 +47,40 @@ class Calculator {
     //function to choose operand
 
     chooseOperand(operator){
+
         if(this.currentOperand ==="")return 
-       if(this.previousOperand !=+""){
-        this.compute()
-       }
+       if(this.previousOperand !=+"")  this.compute()
+    
+    
 
         this.operator = operator
+       
        this.previousOperand=this.currentOperand;
 
        this.currentOperand = ""
     }
 
+    chooseSpecialOperand(specialOperator){
+   
+        // if (this.previousOperand === specialOperator && this.currentOperand !== null) return ""
+        if (this.previousOperand !== specialOperator) {
+         
+            this.specialCompute()
+            this.clear()
+        }
+        this.specialOperator = specialOperator
+        this.previousOperand = this.currentOperand;
 
+        this.currentOperand = ""
+    }
 
     compute(){
         let computation;
         let prev =parseFloat(this.previousOperand)
         let current =parseFloat(this.currentOperand)
         if(isNaN(prev) || isNaN(current)) return 
+   
+    
         switch (this.operator) {
             case "+":
                 computation = prev + current
@@ -75,6 +97,7 @@ class Calculator {
             case "%":
                 computation = prev % current
                 break;
+    
         
             default:
              return;
@@ -86,6 +109,36 @@ class Calculator {
         this.operator = undefined;
     }
 
+    specialCompute() {
+        let computation;
+        let current = parseFloat(this.currentOperand) *Math.PI/180
+        if (isNaN(current)) return
+
+
+        switch (this.specialOperator) {
+            case "log":
+                computation = Math.log10(current)
+                break;
+            case "sin":
+                computation = Math.sin(current)
+                break;
+            case "tan":
+                computation = Math.tan(current)
+                break;
+            case "cos":
+                computation = Math.cos(current)
+                break;
+            default:
+                return;
+        }
+
+        this.currentOperand = computation;
+
+        this.previousOperand = ""
+        this.specialOperator= undefined;
+    }
+
+
     //function to format the numbers pressed
     getDisplayNumber(number){
         const floatNumber = parseFloat(number);
@@ -95,11 +148,15 @@ class Calculator {
     }
 
 
-    updateDisplay(){
+    updateDisplay() {
         this.CurrentValue.innerText = this.getDisplayNumber(this.currentOperand);
-        if(this.operator != null){
+        if (this.operator != null) {
             this.PreviousValue.innerText = `${this.getDisplayNumber(this.previousOperand)} ${(this.operator)}`
-        }else{
+        } else if (this.specialOperator != null) {
+            this.PreviousValue.innerText = `${(this.specialOperator)}${this.getDisplayNumber(this.previousOperand)} `
+        } 
+
+        else {
             this.PreviousValue.innerText = ""
         }
     }
@@ -127,11 +184,26 @@ OperatorButton.forEach((button) => {
     })
 })
 
+//looping over the special operator buttons
+SpecialOperatorButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        calculator.chooseSpecialOperand(button.innerHTML)
+        // console.log(button.innerText)
+        calculator.updateDisplay()
+
+    })
+})
+
 
 //gets value after performing arithmetic operations
 
 EqualsButton.addEventListener('click', () => {
-    calculator.compute()
+  
+        calculator.compute()
+
+        calculator.specialCompute()
+
+ 
     calculator.updateDisplay()
 })
 
