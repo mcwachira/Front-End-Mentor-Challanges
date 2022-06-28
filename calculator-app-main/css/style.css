@@ -4,13 +4,56 @@
     box-sizing: border-box;
 }
 
+.theme--One{
+    --body-background:hsl(222, 26%, 31%);
+     --display-background:hsl(224, 36%, 15%);
+     --keypad-background: hsl(223, 31%, 20%);
+      --keys-background: hsl(30, 25%, 89%);
+      --keys-shadow: hsl(28, 16%, 65%);
+        --main-keys: hsl(185, 42%, 37%);
+        --main-keys-shadow:hsl(185, 58%, 25%);
+        --sub-keys: hsl(25, 98%, 40%);
+        --sub-keys-shadow: hsl(25, 99%, 27%);
+        --text-color: hsl(221, 14%, 31%);
+        --display-text:hsl(30, 25%, 89%);     
+}
+
+.theme--Two{
+    --body-background:hsl(0, 0%, 90%);
+    --display-background: hsl(0, 30%, 83%);
+     --keypad-background: hsl(0, 5%, 81%);
+    --keys-background: hsl(45, 7%, 89%);
+    --keys-shadow: hsl(35, 11%, 61%);
+     --main-keys: hsl(185, 42%, 37%);
+      --main-keys-shadow:hsl(185, 58%, 25%);
+       --sub-keys: hsl(25, 98%, 40%);
+       --sub-keys-shadow: hsl(25, 99%, 27%);
+        --text-color: hsl(60, 10%, 19%);
+        --display-text: hsl(0, 0, 100%);
+}
+
+
+.theme--Three{
+    --body-background: hsl(268, 47%, 21%);
+    --display-background: hsl(268, 71%, 12%);
+     --keypad-background: hsl(268, 71%, 12%);
+      --keys-background: hsl(268, 47%, 21%);
+      --keys-shadow: hsl(290, 70%, 36%);
+      --main-keys: hsl(281, 89%, 26%);
+      --main-keys-shadow: hsl(285, 91%, 52%);
+      --sub-keys: hsl(176, 100%, 44%);
+      --sub-keys-shadow: hsl(177, 92%, 70%);
+       --text-color: hsl(52, 100%, 62%);
+       --display-text: hsl(52, 100%, 62%);
+}
+
+
 
 body{
     font-size: 32px;
     font-weight: 700;
     height: 100vh;
-    background-color: hsl(268, 47%, 21%);
-    ;
+    background-color:var(--body-background);
 }
 
 
@@ -69,32 +112,7 @@ body{
      padding: 5px;
 
 }
-.header__main--ball{
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background-color: #fff;
-    top: 2px;
-    left: 1px;
-    position: absolute;
-transition: transform 0.2s linear;
-}
 
-
-.header__main--themeSlider:checked + .header__main--label .header__main--ball {
-    transform: translateX(22px);
-}
-
-.themeChanger__checkbox--ball {
-    width: 22px;
-    height: 22px;
-    background-color: #fff;
-    border-radius: 50%;
-    top: 2px;
-    left: 1px;
-    position: absolute;
- 
-}
 
 .header__main--themeSlider{
     /* opacity: 0; */
@@ -105,17 +123,14 @@ transition: transform 0.2s linear;
 }
 
 
-.background {
-    background: #111;
-}
 
 .calculator__display{
     margin-top: 1rem;
-    background-color: hsl(268, 75%, 9%);
+    background-color:var(--display-background);
     /* width: 30%; */
     height: 10vh;
     border-radius: 5px;
-    color:#fff;
+    color:var(--display-text);
      text-align: right;
     
 }
@@ -129,17 +144,19 @@ width: 30%;
  height: 60px;
  font-size: 2.5rem;
  margin-bottom: -15px;
+  color:var(--display-text);
+  }
 }
 
 .calculator__display--current {
 height: 100px;
 font-size: 2rem;
-      color:#fff;
+      color:var(--display-text);
 }
 
 .calculator__keys{
      margin-top: 1rem;
-     background-color: hsl(268, 75%, 9%);
+     background-color:var(--keypad-background);
      height:100vh;
      border-radius: 5px;
     
@@ -168,11 +185,11 @@ margin: 1rem  1rem;
 .calculator__keys--thirdRow button,
 .calculator__keys--forthRow button,
 .calculator__keys--firthRow button{
-       background-color: #fff;
+       background-color:var(--keys-background);
        border: none;
        outline: none;
-       color: hsl(281, 89%, 26%);
-       box-shadow:#fff;
+       color:var(--text-color);
+       box-shadow:var(--keys-shadow);
        font-size:20px;
        font-weight: 700;
     padding: .7rem 1.5rem !important;
@@ -182,8 +199,9 @@ margin: 1rem  1rem;
 }
 
 .calculator__keys--firstRow .delete {
-    background-color: rgb(156, 79, 228);
-    color: #fff;
+    background-color: var(--main-keys);
+    box-shadow: var(--main-keys-shadow);
+    color:#fff
     
 }
 
@@ -197,23 +215,25 @@ margin: 1rem  1rem;
 .calculator__keys--firthRow >.calculator__keys--firthRow--reset {
 grid-column-start: 1;
 grid-column-end: 3;
-color: #fff;
-background-color: rgb(156, 79, 228);
+   background-color: var(--main-keys);
+   box-shadow: var(--main-keys-shadow);
+   color:#fff
 }
 
 .calculator__keys--firthRow>.calculator__keys--firthRow--persentage {
 grid-column: 3 / 5;
-background-color: orangered;
-color: #fff;
+   background-color: var(--sub-keys);
+   box-shadow: var(--sub-keys-shadow);
+   color:#fff
 }
 
 .calculator__keys--firthRow>.calculator__keys--firthRow--equals {
     grid-column: 5 / 7;
-    background-color: orangered;
-    color: #fff;
+  background-color: var(--sub-keys);
+  box-shadow: var(--sub-keys-shadow);
+  color:#fff
 }
 
 .attribution{
     margin-top: 10rem;
 }
-

@@ -10,15 +10,7 @@ const DeleteButton = document.querySelector('.delete')
 const EqualsButton = document.querySelector('.equals')
 const PreviousValue = document.querySelector('.previous')
 const CurrentValue = document.querySelector('.current')
-const ThemeChanger =document.getElementById('checkbox')
-const page = document.querySelector('body');
-const ThemeTwo
-
-//change the theme of the page based on the clicking of the checkbox
-ThemeChanger.addEventListener('click', () => {
-    console.log('clicked')
-    page.classList.toggle('background')
-})
+const ThemeChanger = document.getElementById('myRange')
 class Calculator {
     constructor(PreviousValue, CurrentValue){
 
@@ -232,3 +224,48 @@ DeleteButton.addEventListener('click', () => {
     calculator.delete()
     calculator.updateDisplay()
 })
+
+
+
+// theme  settings
+
+//function  to store theme value in local storage
+
+const SetTheme = (themeName) => {
+
+    localStorage.setItem('theme', themeName)
+    document.documentElement.className = themeName;
+    console.log(themeName)
+}
+
+//listening to the changes in the slider and changing the theme
+ThemeChanger.addEventListener('change', () => {
+
+    switch (ThemeChanger.value) {
+        case '1':
+            SetTheme('theme--One')
+
+            break;
+
+        case '2':
+            SetTheme('theme--Two')
+
+            break;
+
+        case '3':
+            SetTheme('theme--Three')
+
+    }
+
+}, false)
+
+    //set an immediately invoked function to set the theme color on initial load
+    (function () {
+        if (ThemeChanger.value === "1") {
+            SetTheme('theme--One')
+        } else if (ThemeChanger.value === '2') {
+            SetTheme('theme--Two')
+        } else {
+            SetTheme('theme--Three')
+        }
+    }())
