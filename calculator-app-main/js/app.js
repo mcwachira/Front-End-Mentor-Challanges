@@ -10,7 +10,15 @@ const DeleteButton = document.querySelector('.delete')
 const EqualsButton = document.querySelector('.equals')
 const PreviousValue = document.querySelector('.previous')
 const CurrentValue = document.querySelector('.current')
+const ThemeChanger =document.getElementById('checkbox')
+const page = document.querySelector('body');
+const ThemeTwo
 
+//change the theme of the page based on the clicking of the checkbox
+ThemeChanger.addEventListener('click', () => {
+    console.log('clicked')
+    page.classList.toggle('background')
+})
 class Calculator {
     constructor(PreviousValue, CurrentValue){
 
