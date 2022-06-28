@@ -16,6 +16,7 @@
         --sub-keys-shadow: hsl(25, 99%, 27%);
         --text-color: hsl(221, 14%, 31%);
         --display-text:hsl(30, 25%, 89%);     
+        --heading-text:hsl(30, 25%, 89%);
 }
 
 .theme--Two{
@@ -30,6 +31,7 @@
        --sub-keys-shadow: hsl(25, 99%, 27%);
         --text-color: hsl(60, 10%, 19%);
         --display-text: hsl(0, 0, 100%);
+        --heading-text:hsl(60, 10%, 19%);
 }
 
 
@@ -45,6 +47,7 @@
       --sub-keys-shadow: hsl(177, 92%, 70%);
        --text-color: hsl(52, 100%, 62%);
        --display-text: hsl(52, 100%, 62%);
+       --heading-text:hsl(52, 100%, 62%);
 }
 
 
@@ -65,15 +68,11 @@ body{
     align-items: center;
     width: 100%;
     margin-top: 10rem;
-    /* margin-top: 10rem; */
+
 }
 
 .header{
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    position: relative; */
+  
     width: 50%;
     
 }
@@ -81,54 +80,69 @@ body{
 
 .header__main {
     width: 50%;
-    /* margin-right: 18rem; */
     margin-left: 10rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.header__main--text >h1{
+    color: var(--heading-text);
+}
 
-.header__main-themeToggler{
+.header__main-themeToggler {
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* margin-left: 5rem; */
 }
 
-.header__main-themeToggler>p{
-    margin-right: 1rem;
+.header__main-themeToggler>label{
+    margin-right: .5rem;
+       color: var(--heading-text);
 }
 
-.header__main--label{
+.header__main-themeToggler .rangeContainer {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+      margin-left: 1rem;
+}
+.header__main-themeToggler .range-values
+{
+      margin-left: 1rem;
+    font-size: 1rem;
+    display: flex;
     justify-content: space-between;
-    background-color: #fff;
-    width: 80px;
+    align-items: center;
+    color: var(--heading-text);
+}
+.header__main-themeToggler .range{
+    margin-left: 1rem;
+    width: 60px;
     height: 25px;
-     background-color: #292c35;
-     border-radius: 50px;
-     position: relative;
-     padding: 5px;
-
+    -webkit-appearance: none;
+    background-color: var(--keypad-background);
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--keys-shadow);
 }
-
-
-.header__main--themeSlider{
-    /* opacity: 0; */
-    /* margin-left: 6rem; */
-    position: absolute;
-
-
+.header__main-themeToggler .range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--heading-text);
+    cursor: pointer;
 }
-
-
 
 .calculator__display{
     margin-top: 1rem;
     background-color:var(--display-background);
     /* width: 30%; */
-    height: 10vh;
+
     border-radius: 5px;
     color:var(--display-text);
      text-align: right;
@@ -136,20 +150,21 @@ body{
 }
  @media (min-width:300px){
     .calculator__display {
-width: 30%;
+   width:30%;
+
     }
  }
 
 .calculator__display--previous{
- height: 60px;
- font-size: 2.5rem;
+ height: 50px;
+ font-size: 2rem;
  margin-bottom: -15px;
   color:var(--display-text);
   }
-}
+
 
 .calculator__display--current {
-height: 100px;
+height: 50px;
 font-size: 2rem;
       color:var(--display-text);
 }
@@ -157,7 +172,7 @@ font-size: 2rem;
 .calculator__keys{
      margin-top: 1rem;
      background-color:var(--keypad-background);
-     height:100vh;
+     height:150vh;
      border-radius: 5px;
     
     
@@ -175,8 +190,8 @@ margin: 1rem  1rem;
     margin: 1rem  auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap:.5rem;
-    row-gap: .5rem;
+    column-gap:1.2rem;
+    row-gap: 1.2rem;
     justify-items: center;
 }
 
