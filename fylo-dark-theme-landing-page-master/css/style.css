@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+ 
+    color: hsl(0, 0%, 100%);
+     
+}
+
+.header{
+    width: 100%;
+    background-color: hsl(217, 28%, 15%);
+    /* margin-top: 1rem;*/
+
+    display: flex;
+    
+}
+.navbar{
+       margin-top: 2rem;
+       width: 100%;
+       display:flex;
+    justify-content: space-between;
+    align-items: center;
+   
+   
+
+}
+.logo{
+    width:20px;
+    height: 20px;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin-right: 4rem;
+    cursor: pointer;
+    /* margin-left: 2rem; */
+    /* width: 100%; */
+}
+.menu a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: hsl(0, 0%, 100%);
+}
+
+.illustration__intro{
+    display: flex;
+    flex-direction: column;
+      background-color: hsl(217, 28%, 15%);
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+    margin: -2rem auto;
+}
+
+.intro__img{
+    margin-top: 4rem;
+    width: 40%;
+}
+.illustration__intro--heading,
+.illustration__intro--paragraph{
+ text-align:center;
+
+}
+
+.illustration__intro--heading
+{
+    width: 100%;
+    font-size: 1.9rem;
+    margin: .5rem 0;
+    width: 50%;
+   
+}
+
+.illustration__intro--paragraph{
+    margin:1rem 0;
+    font-size: 1.3rem;
+        width: 50%;
+
+}
+
+.intro__btn{
+    background-color: hsl(176, 68%, 64%);
+    outline: none;
+    border: none;
+    padding: .7em 3rem;
+    border-radius: 20px;
+ color: hsl(0, 0%, 100%);
+ cursor: pointer;
+ margin-bottom: 4rem;
+    
+}
+
+.about__us  {
+
+   background-image:url('../images/bg-curvy-desktop.svg');
+   background-color: hsl(218, 28%, 13%);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: top center;
+
+}
+.main__roles,.sub__roles{
+    /* margin-top: 3rem; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+.main__roles div,
+.sub__roles div {
+margin: 3rem auto;
+width: 50%;
+}
+..main__roles p,
+.sub__roles p{
+    margin: 1rem auto;
+    width: 50%s;
+}
+
+.main__roles >h2 ,
+.sub__roles>h2{
+margin: 3rem 0;
+/* width: 50%; */
+}
+
+.main__roles>p,
+.sub__roles>p {
+width: 50%;
+}
+
+
+
+.more{
+width: 100%;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+ margin: 5rem auto;
+align-items: center;
+/* justify-items: center; */
+ text-align: center;
+
+ grid-gap: 1rem;
+ 
+}
+.more__image{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.more__image >img{
+    width: 80%;
+}
+
+.more__text{
+    width: 50%;
+
+    text-align: left;
+}
+.more__text h2{
+margin: 1rem auto;
+}
+.more__text p {
+
+margin:1rem auto;
+
+}
+.cta{
+    
+        background-color: hsl(217, 28%, 15%);
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+}
+
+
+
+.footer{
+    background-color:hsl(216, 53%, 9%);
+    width: 100%;
+
+   display: grid;
+   grid-template-columns: repeat(5,1fr);
+   gap: 1rem;
+}
+
+.footer  >  div{
+    margin: 5rem auto;
+}
+
+.footer__socials
+
+
+.footer__socials div {
+     display: flex;
+     border-radius: 50%;
+     padding: .5rem .5rem;
+     border: 2px solid #fff;
+     /* margin-left: 1rem; */
+ }
