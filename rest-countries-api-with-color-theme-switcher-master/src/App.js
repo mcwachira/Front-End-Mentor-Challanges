@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react'
+import Search from './components/search/Search.component'
+import { BsSearch } from "react-icons/bs";
+import CountryData from './components/CountryContainer/CountryData.component.';
 
-function App() {
+const App = () => {
+
+
+const [isLoading, setIsLoading] = useState(true);
+const [collection , setCollection] = useState([]);
+  const [searchText, setSearchText] = useState("")
+
+
+useEffect(() =>{
+    fetch('https://restcountries.com/v3.1/all').then((response) => response.json()).then((response) =>{
+      setCollection(response) 
+      setIsLoading(false)   
+}
+      
+    ).catch(error => alert(error.msg) )
+},[])
+
+
+const HandleChange = (e) => (setSearchText(e.target.value))
+
+  const FilteredCountry = collection.filter((countries) => (countries.name.common.toLowerCase().includes(searchText.toLowerCase())))
+
+
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+<>
+      {isLoading ? <div> Loading ... </div > : <div>
+       
+<div className="main">
+
+  <div className="input">
+              <Search handleChange={HandleChange} icon={<BsSearch/>} /> 
+  </div>
+</div>
+
+
+        <CountryData countryDetails={FilteredCountry} />
+        {/* {console.log(FilteredCountry)} */}
+
+      </div>
+      }
+
+</>
+    
+  )
 }
 
-export default App;
+export default App
