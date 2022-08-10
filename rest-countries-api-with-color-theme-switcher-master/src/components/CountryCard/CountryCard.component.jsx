@@ -1,17 +1,18 @@
 import React from 'react'
 import { CountryData, CountryDataHeading , CountryFlag } from './country.styles'
+import { Link , useParams} from 'react-router-dom'
 
-const Country = ({details}) => {
+const CountryCard = ({details}) => {
     return(
 
 <>    
         
      
-     
-     {console.log(details)}
+            <CountryData>
+            <Link to={`/name/:${details.name.common}`}>
 
-                <CountryData>
-                {console.log(details.population)}
+         
+                {/* {console.log(details)} */}
                 <CountryFlag src={details.flags.png} alt={details.name.common}/>
                 <CountryDataHeading>
 {details.name.common}
@@ -29,12 +30,12 @@ const Country = ({details}) => {
 
 
 
-                    </CountryData>
 
-     
-  
+     </Link>
+
+            </CountryData>
         </>
     )
 }
 
-export default Country
+export default CountryCard
