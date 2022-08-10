@@ -2,7 +2,6 @@ import React from 'react'
 import {HeaderBg , SearchContainer} from './Header.styles'
 import Search from '../Search/Search.component'
 import Info from '../Info/Info.component'
-
 const Header = () => {
   return (
     <>
