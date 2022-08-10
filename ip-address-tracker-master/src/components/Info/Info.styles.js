@@ -11,6 +11,7 @@ height: 10rem;
 display:grid;
 grid-template-columns:repeat(4, 1fr) ;
 grid-gap:1rem ;
+z-index:20 ;
 
 
 `

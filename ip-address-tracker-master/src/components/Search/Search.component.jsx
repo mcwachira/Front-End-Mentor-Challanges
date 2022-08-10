@@ -9,7 +9,7 @@ const Search = () => {
 
   const handleClick = async () => {
     console.log(searchTerm)
-        const results = await axios.get(`https://geo.ipify.org/api/v2/country?apiKey=at_3e6CAMFZmG793uryze7RNNheb4bj3&ipAddress=${searchTerm}`)
+        const results = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=at_3e6CAMFZmG793uryze7RNNheb4bj3&ipAddress=${searchTerm}`)
         console.log(results)
 
     setIp(results)
