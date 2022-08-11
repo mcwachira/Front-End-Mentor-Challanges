@@ -4,9 +4,9 @@ import CountryCard from '../CountryCard/CountryCard.component'
 import {Link, useParams} from 'react-router-dom'
 
 const CountryData = ({countryDetails}) => {
-  console.log(countryDetails)
+  // console.log(countryDetails)
   return (
-   <CountryContainer>
+   <CountryContainer >
 
 {
   countryDetails?.map((data) =>(

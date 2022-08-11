@@ -1,15 +1,26 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, {useContext} from 'react'
+import {Link, Outlet} from 'react-router-dom'
 import { NavigationComponent, NavLink} from './Navigation.styles'
+import { ThemeContext } from '../../context/theme.context'
+import { FaSun, FaMoon } from 'react-icons/fa'
 
-const Navigation = () => {
+
+const Navigation = ({toggleTheme}) => {
+  const { theme } = useContext(ThemeContext)
   return (
-   <NavigationComponent>
-    
-    <NavLink to='/'>Where in the world</NavLink>
+    <>
+      <NavigationComponent>
 
-    <button>dark mode</button>
-   </NavigationComponent>
+        <NavLink to='/'>Where in the world</NavLink>
+
+        <button onClick={toggleTheme}>{theme !== 'dark' ?( <FaSun/>)  : (<FaMoon/>)}</button>
+
+      </NavigationComponent>
+
+      {/*  outlet for persisting navigation bar*/}
+      <Outlet />
+    </>
+ 
   )
 }
 

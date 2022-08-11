@@ -5,23 +5,25 @@ import { CountryData, CountryFlag } from './Country.styles'
 
 const Country = ({ countryData }) => {
 
-    const {name, tld, capital, region, subregion,languages, population,currencies, flags,flag} = countryData
+    const {name, tld, capital, region, subregion,languages, population,currencies, flags,borders} = countryData
 
- const image = Object.entries(flags).forEach(item => console.log(item))
- console.log(image)
+    // console.log(languages)
+    // console.log(currencies)
+    // console.log(borders)
     return (
+
 
 <CountryData>
 
             <Link to='/'> <AiOutlineArrowLeft/>  back</Link>
 
     <CountryFlag>
-        <img src={flag[0].png} alt={countryData.name.common}/>
+        <img src={flags.png} alt={countryData.name}/>
     </CountryFlag>
 
     <div>
         <h1>
-                    {name.common}
+                    {name}
         </h1>
 
         <div>
@@ -45,6 +47,26 @@ const Country = ({ countryData }) => {
       
                
       
+        </div>
+
+        <div>
+            <p>
+          Top Level Domain: {tld}
+            </p>
+            <p>
+              currencies :{currencies[0].name}
+            </p>
+            <p>
+              Languages :{languages[0].name}
+            </p>
+            <p>
+              Capital {capital}
+            </p>
+
+        </div>
+
+        <div>
+          Border Countries : {borders?.map((b , index) => <span key={index}> {b}</span>)}
         </div>
     </div>
 </CountryData>

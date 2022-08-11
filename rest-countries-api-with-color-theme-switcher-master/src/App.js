@@ -1,20 +1,29 @@
-import React from 'react'
+import React , {useContext} from 'react'
 import HomePage from './pages/Home/HomePage'
 import Navigation from './pages/Navigation/Navigation'
 import CountryPage from './pages/Country/CountryPage'
+import { ThemeContext } from './context/theme.context'
 import {Routes, Route} from 'react-router-dom'
 
-const App = () => (
+
+const App = () =>{
+  const { toggleTheme , color, background} = useContext(ThemeContext)
+  
+  
+  return (
   
 
 
-  <main>
+  <main style={{
+    background:`${background}`,
+    color:`${color}`,
+  }}>
     <Routes>
-      {/* <Route path="/" element={<Navigation />}> */}
-        <Route path='/' index={true} element={<HomePage />} />
+      <Route path="/" element={<Navigation  toggleTheme ={toggleTheme}/>}>
+        <Route index={true} element={<HomePage />} />
         <Route path='/name/:countryId' element={<CountryPage/>} />
 
-      {/* </Route> */}
+      </Route>
     </Routes>
   
 
@@ -23,4 +32,5 @@ const App = () => (
 
 
 )
+}
 export default App

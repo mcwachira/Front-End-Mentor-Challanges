@@ -12,9 +12,10 @@ const HomePage = () => {
 
 
     useEffect(() => {
-        fetch('https://restcountries.com/v3.1/all').then((response) => response.json()).then((response) => {
+        fetch('https://restcountries.com/v2/all').then((response) => response.json()).then((response) => {
 
             setCollection(response)
+    
             setIsLoading(false)
         }
 
@@ -24,7 +25,7 @@ const HomePage = () => {
 
     const HandleChange = (e) => (setSearchText(e.target.value))
 
-    const FilteredCountry = collection.filter((countries) => (countries.name.common.toLowerCase().includes(searchText.toLowerCase())))
+    const FilteredCountry = collection.filter((countries) => (countries.name.toLowerCase().includes(searchText.toLowerCase())))
 
 
 

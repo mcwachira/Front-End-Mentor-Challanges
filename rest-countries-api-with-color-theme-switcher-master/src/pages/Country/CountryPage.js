@@ -12,7 +12,7 @@ const CountryPage = () => {
 
 
     useEffect(() => {
-        fetch(`https://restcountries.com/v3.1/name/${countryName}`).then((response) => response.json()).then((response) => {
+      fetch(`https://restcountries.com/v2/name/${countryName}`).then((response) => response.json()).then((response) => {
 
  
             setCountry(response)
@@ -24,7 +24,7 @@ const CountryPage = () => {
   return (
       <div>
 
-{country.map((data) => (<Country key={data.name.common} countryData={data} />) )}
+{country.map((data) => (<Country key={data.name} countryData={data} />) )}
 
 
 </div>
