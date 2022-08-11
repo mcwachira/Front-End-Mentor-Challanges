@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {AiOutlineArrowLeft} from 'react-icons/ai'
-import { CountryData, CountryFlag } from './Country.styles'
+import { CountryData, CountryFlag , ImageContainer } from './Country.styles'
 
 const Country = ({ countryData }) => {
 
@@ -17,9 +17,12 @@ const Country = ({ countryData }) => {
 
             <Link to='/'> <AiOutlineArrowLeft/>  back</Link>
 
-    <CountryFlag>
-        <img src={flags.png} alt={countryData.name}/>
-    </CountryFlag>
+
+          <ImageContainer src={flags.png} alt={countryData.name} styles={{
+            width:" 10px" ,
+            height: "10px" ,
+}} />
+
 
     <div>
         <h1>

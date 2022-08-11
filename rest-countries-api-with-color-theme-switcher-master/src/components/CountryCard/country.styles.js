@@ -5,7 +5,7 @@ display:flex ;
 flex-direction:column ;
 justify-content: center;
 align-items:center ;
-background-color: hsl(0, 0%, 100%) ;
+/* background-color: hsl(0, 0%, 100%) ; */
 box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
 -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
@@ -18,7 +18,6 @@ width:100% ;
 export const CountryDataHeading = styled.h2`
 font-weight: bold;
 font-size:1.5rem;
-  color:#000;
 
 `
 

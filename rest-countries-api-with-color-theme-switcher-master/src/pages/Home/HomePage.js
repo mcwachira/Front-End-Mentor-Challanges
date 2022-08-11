@@ -1,48 +1,29 @@
-import React, { useState, useEffect } from 'react'
+import React, {useContext } from 'react'
 import Search from '../../components/search/Search.component'
 import { BsSearch } from "react-icons/bs";
 import CountryData from '../../components/CountryContainer/CountryData.component.';
-
+import { Main } from './Home.styles';
+import SelectRegion from '../../components/Region/Region.component';
+import { CountriesContext } from '../../context/countryContext';
 const HomePage = () => {
 
-
-    const [isLoading, setIsLoading] = useState(true);
-    const [collection, setCollection] = useState([]);
-    const [searchText, setSearchText] = useState("")
-
-
-    useEffect(() => {
-        fetch('https://restcountries.com/v2/all').then((response) => response.json()).then((response) => {
-
-            setCollection(response)
-    
-            setIsLoading(false)
-        }
-
-        ).catch(error => alert(error.msg))
-    }, [])
-
-
-    const HandleChange = (e) => (setSearchText(e.target.value))
-
-    const FilteredCountry = collection.filter((countries) => (countries.name.toLowerCase().includes(searchText.toLowerCase())))
-
-
+const {isLoading} = useContext(CountriesContext)
 
     return (
         <>
             {isLoading ? <div> Loading ... </div > : <div>
 
 
-                <div className="main">
+                <Main>
 
                     <div className="input">
-                        <Search handleChange={HandleChange} icon={<BsSearch />} />
+                        <Search icon={<BsSearch />} />
                     </div>
-                </div>
+                    <SelectRegion/>
+                </Main>
 
 
-                <CountryData countryDetails={FilteredCountry} />
+                <CountryData/>
                 {/* {console.log(FilteredCountry)} */}
 
             </div>

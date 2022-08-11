@@ -13,7 +13,7 @@ const Navigation = ({toggleTheme}) => {
 
         <NavLink to='/'>Where in the world</NavLink>
 
-        <button onClick={toggleTheme}>{theme !== 'dark' ?( <FaSun/>)  : (<FaMoon/>)}</button>
+        <button onClick={toggleTheme}>{theme !== 'dark' ?( <FaSun size={30}/>)  : (<FaMoon size={30}/>)}</button>
 
       </NavigationComponent>
 

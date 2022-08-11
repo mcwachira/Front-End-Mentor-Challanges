@@ -1,15 +1,15 @@
-import React from 'react'
+import React , {useContext} from 'react'
 import { CountryContainer } from './CountryData.styles'
 import CountryCard from '../CountryCard/CountryCard.component'
 import {Link, useParams} from 'react-router-dom'
-
-const CountryData = ({countryDetails}) => {
-  // console.log(countryDetails)
+import { CountriesContext } from '../../context/countryContext'
+const CountryData = () => {
+  const { FilteredCountry } = useContext(CountriesContext)
   return (
    <CountryContainer >
 
 {
-  countryDetails?.map((data) =>(
+        FilteredCountry?.map((data) =>(
   
       <CountryCard key={data.flag} details={data} />
 

@@ -4,15 +4,19 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider} from './context/theme.context';
+import { CountriesProvider } from './context/countryContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   <ThemeProvider>
-  <Router>
-      <App />
-  </Router>
+  <CountriesProvider>
+        <Router>
+          <App />
+        </Router>
+  </CountriesProvider>
+
  </ThemeProvider>
   </React.StrictMode>
 );

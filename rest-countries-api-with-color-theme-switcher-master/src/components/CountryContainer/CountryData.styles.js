@@ -3,10 +3,14 @@ export const CountryContainer = styled.div`
 
 width:100% ;
 /* height: 100vh; */
-margin:5rem 1rem ;
-display:grid ;
-grid-template-columns:repeat(4, 270px) ;
-grid-gap: 5rem ;
+  max-width: 1200px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  z-index:10 ;
+
+
+  gap: 2rem;
 align-items:center ;
 justify-content:center ;
 
