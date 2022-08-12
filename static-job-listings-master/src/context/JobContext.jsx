@@ -40,6 +40,7 @@ const value = {
     setJobData,
     inputChange,
     setInputChange,
+    // addToSearch,
  
 }
     return <JobContext.Provider value={value}>{children}</JobContext.Provider>

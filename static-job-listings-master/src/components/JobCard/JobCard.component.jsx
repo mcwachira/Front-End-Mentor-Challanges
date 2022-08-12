@@ -11,7 +11,7 @@ const JobCard = () => {
 
   const {  setInputChange , inputChange} = useContext(JobContext)
   const addToSearch = (value) => {
-    console.log(value)
+    // console.log(value)
 
     setInputChange((inputChange) => [
       ...inputChange,
@@ -19,8 +19,7 @@ const JobCard = () => {
     ])
   }
 
-
-  console.log(inputChange)
+  // console.log(inputChange)
   return (
     <div>{data.map((d) =>(<JobContainer key={d.id}>
     <JobDetails>
