@@ -1,10 +1,26 @@
-import React from 'react'
-import { JobContainer, JobDetails, JobImage, JobDetailsBody, JobDetailsHeader, JobDetailsFooter, LanguageDetails, Language} from './JobCard.styles'
+import React, { useContext , useEffect} from 'react'
+import { JobContainer, JobDetails, JobImage, JobDetailsBody, JobDetailsHeader, JobDetailsFooter, LanguageDetails, Language } from './JobCard.styles'
+import SearchBar from '../SearchBar/SearchBar'
 import data from '../../data.json'
+import { JobContext } from '../../context/JobContext'
+
 console.log(data)
 
 
 const JobCard = () => {
+
+  const {  setInputChange , inputChange} = useContext(JobContext)
+  const addToSearch = (value) => {
+    console.log(value)
+
+    setInputChange((inputChange) => [
+      ...inputChange,
+      value
+    ])
+  }
+
+
+  console.log(inputChange)
   return (
     <div>{data.map((d) =>(<JobContainer key={d.id}>
     <JobDetails>
@@ -40,7 +56,7 @@ const JobCard = () => {
     </JobDetails>
 
   <LanguageDetails>
-    {d.languages.map((language) => <Language key={language}>{language}</Language>)}
+    {d.languages.map((language) => <Language onClick={() => addToSearch(language)} key={language}>{language}</Language>)}
   </LanguageDetails>
 
 

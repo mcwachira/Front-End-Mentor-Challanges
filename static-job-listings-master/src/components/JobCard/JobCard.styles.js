@@ -4,7 +4,7 @@ export const JobContainer = styled.div`
 display:grid ;
 grid-template-columns:repeat(2,1fr) ;
 gap:5rem;
-width:80% ;
+width:60% ;
 height:20vh ;
 margin:2rem auto;
 background-color:white ;

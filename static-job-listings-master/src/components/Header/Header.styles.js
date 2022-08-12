@@ -8,12 +8,14 @@ background-size:cover ;
 background-repeat:no-repeat ;
 background-position:top center ;
 background-color: hsl(180, 29%, 50%) ;
+margin-bottom:5rem ;
+position: relative;
 
 
 `
 export const HeaderBody = styled.div`
 
 width:100% ;
-background-color:hsl(180, 52%, 96%) ;
+/* background-color:hsl(180, 52%, 96%) ; */
 
 `
