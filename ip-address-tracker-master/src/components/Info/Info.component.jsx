@@ -1,6 +1,6 @@
 import React, { useContext , useState } from 'react'
 import axios from 'axios'
-import { InfoContainer, InfoDetails } from './Info.styles'
+import { InfoContainer, InfoDetails, InfoHeading } from './Info.styles'
 import { IpContext } from '../context/IpData.context'
 const Info = () => {
 
@@ -16,41 +16,41 @@ const Info = () => {
         
                 <InfoContainer>
                     <InfoDetails>
-                        <h5>
+                        <InfoHeading>
                             IP ADDRESS
-                        </h5>
+                        </InfoHeading>
 
-                        <h3>
+                        <h4>
                             {ip?.data.ip}
-                        </h3>
+                        </h4>
                     </InfoDetails>
 
                     <InfoDetails>
-                        <h5>
+                        <InfoHeading>
                             location
-                        </h5>
+                        </InfoHeading>
 
-                        <h3>
+                        <h4>
                             {ip?.data.location.region}
-                        </h3>
+                        </h4>
                     </InfoDetails>
                     <InfoDetails>
-                        <h5>
+                        <InfoHeading>
                             timezone
-                        </h5>
-                        <h3>
+                        </InfoHeading>
+                        <h4>
                             {ip.data?.location.timezone}
-                        </h3>
+                        </h4>
 
                     </InfoDetails>
                     <InfoDetails>
-                        <h5>
+                        <InfoHeading>
                             isp
-                        </h5>
+                        </InfoHeading>
 
-                        <h3>
+                        <h4>
                             {ip?.data.isp}
-                        </h3>
+                        </h4>
                     </InfoDetails>
                 </InfoContainer>
        

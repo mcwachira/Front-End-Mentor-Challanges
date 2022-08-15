@@ -2,14 +2,16 @@ import styled from "styled-components";
 import img from  '../../images/icon-arrow.svg'
 export const SearchInput = styled.input`
 
-width:30rem;
-height:2rem;
+width:25rem;
+height:3rem;
 border:none ;
 outline:none ;
 border-radius:10px ;
 position:relative ;
 display:flex ;
 color:grey ;
+font-size: 1.3rem;
+margin:5rem 0 ;
 
 `
 

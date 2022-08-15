@@ -12,10 +12,10 @@ const locationIcon = new Icon({
 const Map = () => {
     const {ip , isLoading} = useContext(IpContext)
 
- let position = []
+//  let position = []
  if(isLoading === false){
      console.log([ip.data.location.lat, ip?.data.location.lng])
-    position=[ip.data.location.lat, ip.data.location.lng]
+    // position=[ip.data.location.lat, ip.data.location.lng]
  }
 
    
@@ -23,12 +23,12 @@ const Map = () => {
     <>
           {isLoading ? (<h1> Loading ...</h1 >) : (
               <MapBox>
-                  <MapContainer center={[ip?.data.location.lat, ip?.data.location.lng]} zoom={12} scrollWheelZoom={false}>
+                  <MapContainer center={[ip.data.location.lat, ip.data.location.lng]} zoom={12} scrollWheelZoom={false}>
                       <TileLayer
                           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                       />
-                      <Marker position={[ip?.data.location.lat, ip?.data.location.lng]}>
+                      <Marker position={[ip.data.location.lat, ip.data.location.lng]}>
 
                           <Popup>
 

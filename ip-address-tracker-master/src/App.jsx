@@ -1,14 +1,11 @@
 import react from 'react'
-import Header from './components/Header/Header.component'
+import './app.css'
+import Home from './pages/Home/Home'
 function App() {
 
 
   return (
-    <div>
-      <div>
-   <Header/>
-      </div>
-    </div>
+    <Home/>
   )
 }
 
