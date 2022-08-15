@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../../context/theme.context'
-import { CountryData, CountryDataHeading , CountryFlag } from './country.styles'
+import { CountryData, CountryDataHeading, CountryFlag, CountryDataDetails } from './CountryCard.styles'
 import { Link , useParams} from 'react-router-dom'
 
 const CountryCard = ({details}) => {
@@ -19,25 +19,34 @@ const CountryCard = ({details}) => {
 
          
                 {/* {console.log(details)} */}
-                <CountryFlag src={details.flags.png} alt={details.name.common}/>
-                <CountryDataHeading>
-{details.name}
-                </CountryDataHeading> 
-                <p>
-                    population:{details.population}
-                </p>
-                <p>
-                    Region:{details.region}
-                </p>
-
-                <p>
-                    Capital:{details.capital}
-                </p>
+                <CountryFlag src={details.flags.png} alt={details.name.common} 
+                     
 
 
+                />
 
 
      </Link>
+                <CountryDataHeading>
+                    {details.name}
+                </CountryDataHeading>
+                <CountryDataDetails>
+                   
+                    <p>
+                        population:{details.population}
+                    </p>
+                    <p>
+                        Region:{details.region}
+                    </p>
+
+                    <p>
+                        Capital:{details.capital}
+                    </p>
+
+
+                </CountryDataDetails>
+              
+
 
             </CountryData>
         </>

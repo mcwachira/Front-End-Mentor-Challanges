@@ -4,7 +4,7 @@ import { SearchContainer , SearchValue ,ClearSearchButton } from './SearchBar.st
 import { MdDeleteForever } from 'react-icons/md'
 const SearchBar = () => {
 
-    const {inputChange, setInputChange} = useContext(JobContext)
+    const {inputChange, setInputChange, jobData, setJobData} = useContext(JobContext)
 // console.log(inputChange)
 
 const removeFromSearch  =(value) => {
@@ -17,6 +17,11 @@ const removeFromSearch  =(value) => {
 const clearSearch = () => {
 setInputChange(() => [])
 console.log('clear')
+
+const filterJobs = () => {
+
+
+}
 }
 
   return (

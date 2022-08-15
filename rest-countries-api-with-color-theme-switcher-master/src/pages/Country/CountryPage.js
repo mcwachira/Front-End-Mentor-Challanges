@@ -1,6 +1,7 @@
 import React ,{useState, useEffect} from 'react'
 import Country from '../../components/Country/Country.component';
 import {Link, useParams} from 'react-router-dom'
+import { CountryPageContainer } from './CountryPage.styles'
 
 const CountryPage = () => {
 
@@ -22,12 +23,12 @@ const CountryPage = () => {
         ).catch(error => alert(error.msg))
     }, [countryName])
   return (
-      <div>
+      <CountryPageContainer>
 
 {country.map((data) => (<Country key={data.name} countryData={data} />) )}
 
 
-</div>
+</CountryPageContainer>
 
 
   )

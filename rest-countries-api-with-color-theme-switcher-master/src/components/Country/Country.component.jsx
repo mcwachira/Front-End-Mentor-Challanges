@@ -1,7 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
 import {AiOutlineArrowLeft} from 'react-icons/ai'
-import { CountryData, CountryFlag , ImageContainer } from './Country.styles'
+import { 
+  CountryData,  
+  CountryDetails,
+   ImageContainer,
+    ImageData, BackLink, 
+  CountryDataContainer, Details, ExtraDetails, MajorDetails, CountryBorders,  BordersBox
+} from './Country.styles'
 
 const Country = ({ countryData }) => {
 
@@ -15,63 +21,71 @@ const Country = ({ countryData }) => {
 
 <CountryData>
 
-            <Link to='/'> <AiOutlineArrowLeft/>  back</Link>
+            <BackLink to='/'> <AiOutlineArrowLeft/>  back</BackLink>
 
 
-          <ImageContainer src={flags.png} alt={countryData.name} styles={{
-            width:" 10px" ,
-            height: "10px" ,
-}} />
+
+<CountryDataContainer>
+
+<ImageContainer>
+            <ImageData src={flags.png} alt={countryData.name} />
+</ImageContainer>
+          
+
+<CountryDetails>
+            <h1>
+              {name}
+            </h1>
+            <Details>
+
+            
+              <MajorDetails>
+
+        
+
+                <div>
+                  <p>
+                    Population: {population}
+                  </p>
+                  <p>
+                    Region:{region}
+                  </p>
+                  <p>
+                    SubRegion:{subregion}
+                  </p>
+                  <p>
+                    Capital {capital}
+                  </p>
+                </div>
+
+                </MajorDetails>
+              <ExtraDetails>
+                <p>
+                  Top Level Domain: {tld}
+                </p>
+                <p>
+                  currencies :{currencies[0].name}
+                </p>
+                <p>
+                  Languages :{languages[0].name}
+                </p>
+                <p>
+                  Capital {capital}
+                </p>
+
+              </ExtraDetails>
+              </Details>
 
 
-    <div>
-        <h1>
-                    {name}
-        </h1>
+ 
+          <CountryBorders>
+                Border Countries : {borders?.map((b, index) => <BordersBox key={index}> {b}</BordersBox>)}
+              </CountryBorders>
+          </CountryDetails>
 
-        <div>
-            <div>
-              {/* <p>
-                            Native Name: {name.nativeName.eng}
-              </p> */}
-              <p>
-                Population: {population}
-              </p>
-              <p>
-                Region:{region}
-              </p>
-              <p>
-                SubRegion:{subregion}
-              </p>
-              <p>
-               Capital {capital}
-              </p>
-            </div>
-      
-               
-      
-        </div>
-
-        <div>
-            <p>
-          Top Level Domain: {tld}
-            </p>
-            <p>
-              currencies :{currencies[0].name}
-            </p>
-            <p>
-              Languages :{languages[0].name}
-            </p>
-            <p>
-              Capital {capital}
-            </p>
-
-        </div>
-
-        <div>
-          Border Countries : {borders?.map((b , index) => <span key={index}> {b}</span>)}
-        </div>
-    </div>
+          
+</CountryDataContainer>
+         
 </CountryData>
 
     )

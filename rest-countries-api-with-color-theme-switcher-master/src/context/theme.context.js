@@ -24,8 +24,8 @@ export const ThemeProvider = ({children}) => {
         if (theme === 'light') {
             window.localStorage.setItem('theme', 'dark')
             setTheme('dark')
-            setBackground('#000')
-            setColor('#fff')
+            setBackground('hsl(207, 26%, 17%)')
+            setColor('hsl(0, 0%, 100%)')
         } else {
             window.localStorage.setItem('theme', 'light')
             setTheme('light')

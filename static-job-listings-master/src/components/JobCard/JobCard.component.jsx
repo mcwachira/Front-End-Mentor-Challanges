@@ -1,4 +1,4 @@
-import React, { useContext , useEffect} from 'react'
+import React, { useContext , useEffect , useState} from 'react'
 import { JobContainer, JobDetails, JobImage, JobDetailsBody, JobDetailsHeader, JobDetailsFooter, LanguageDetails, Language } from './JobCard.styles'
 import SearchBar from '../SearchBar/SearchBar'
 import data from '../../data.json'
@@ -8,8 +8,9 @@ console.log(data)
 
 
 const JobCard = () => {
+  const [filteredJobs, setFilteredJobs] = useState([])
 
-  const {  setInputChange , inputChange} = useContext(JobContext)
+  const {  setInputChange , inputChange, jobData , setJobData} = useContext(JobContext)
   const addToSearch = (value) => {
     // console.log(value)
 
@@ -17,11 +18,29 @@ const JobCard = () => {
       ...inputChange,
       value
     ])
+
+    if(jobData.length > 0){
+      setFilteredJobs(() => jobData.map((dt) => {
+        return dt.languages.filter((lang) => lang === value) 
+      })
+      )
+          
+       console.log(filteredJobs)
+//  setJobData((jobData) => [
+//       ...jobData,
+//        newJob
+//     ])
+    }
+    // console.log(value)
+    // const newJob = jobData?.filter(obj =>{return  obj.languages === value}) 
+    // console.log(newJob.languages)
+
+   
   }
 
-  // console.log(inputChange)
+  console.log(inputChange)
   return (
-    <div>{data.map((d) =>(<JobContainer key={d.id}>
+    <div>{jobData?.map((d) =>(<JobContainer key={d.id}>
     <JobDetails>
 
             

@@ -20,20 +20,12 @@ export const JobProvider = ({children}) => {
     const [inputChange, setInputChange]= useState([])
 
 
-    // const addToSearch = (value) => {
-   
-    //     setInputChange((inputChange) => [
-    //         ...inputChange,
-    //         value
-    //     ])
-     
-
-    // }
+    useEffect(() => {
+            setJobData(() => data)
 
 
-    // useEffect(() => {
-    //         addToSearch()
-    // }, [])
+
+    }, [])
     console.log(inputChange)
 const value = {
     jobData,
