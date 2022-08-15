@@ -3,6 +3,7 @@ import { MapBox } from './Map.styles'
 import { IpContext } from '../context/IpData.context'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import {Icon} from 'leaflet'
+import ChangeMapView from './ChangeMapView'
 
 
 const locationIcon = new Icon({
@@ -12,10 +13,10 @@ const locationIcon = new Icon({
 const Map = () => {
     const {ip , isLoading} = useContext(IpContext)
 
-//  let position = []
+ let position = []
  if(isLoading === false){
      console.log([ip.data.location.lat, ip?.data.location.lng])
-    // position=[ip.data.location.lat, ip.data.location.lng]
+ position=[ip.data.location.lat, ip.data.location.lng]
  }
 
    
@@ -23,6 +24,7 @@ const Map = () => {
     <>
           {isLoading ? (<h1> Loading ...</h1 >) : (
               <MapBox>
+                  {console.log(ip.data.location.lat, ip.data.location.lng )}
                   <MapContainer center={[ip.data.location.lat, ip.data.location.lng]} zoom={12} scrollWheelZoom={false}>
                       <TileLayer
                           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -37,11 +39,11 @@ const Map = () => {
                             <h1>
                                 Nairobi
                             </h1>
-                        {/* <h2>{ip.data.location.country}</h2>
-                        <h4>{ip.location.data.city}</h4>
-                        <h5>{ip.location.data.timezone}</h5> */}
+                     
                           </Popup>
                       </Marker>
+
+                      <ChangeMapView coords={position}/>
                   </MapContainer>
               </MapBox>
           )

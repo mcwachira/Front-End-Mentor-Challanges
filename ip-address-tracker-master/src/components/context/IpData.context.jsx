@@ -3,9 +3,11 @@ import axios from "axios";
 
 export const IpContext = createContext({
     ip: {},
+    searchTerm:"",
     setIp: () => { },
     isLoading:true,
     setIsLoading:() => {},
+    setSearchTerm: () => { },
 })
 
 
@@ -13,13 +15,14 @@ export const IpProvider = ({ children }) => {
 
     const [ip, setIp] = useState({})
     const [isLoading, setIsLoading] = useState(true)
+    const [searchTerm, setSearchTerm] = useState("")
 
     useEffect(() => {
   
         const getIPData = async () => {
-
-            const results = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=at_3e6CAMFZmG793uryze7RNNheb4bj3`)
-          
+                console.log(searchTerm)
+         
+            const results = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=at_j1QRVM5JRifBXmIEGvbwlJRgzfjbl&ipAddress=${searchTerm}`)
             console.log(results)
 
                         if(results){
@@ -36,7 +39,7 @@ export const IpProvider = ({ children }) => {
 
        
     }, [])
-    const value = { ip, setIp ,isLoading, setIsLoading }
+    const value = { ip, setIp ,isLoading, setIsLoading ,setSearchTerm, searchTerm}
 
     return <IpContext.Provider value={value}>{children}</IpContext.Provider>
 
