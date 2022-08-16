@@ -19,4 +19,9 @@ justify-content:center ;
 align-items:center ;
 width:100% ;
 
+h2{
+    margin-top:5rem ;
+    color: #fff;
+    font-size:2rem ;
+}
 `

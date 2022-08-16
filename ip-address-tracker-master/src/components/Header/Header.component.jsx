@@ -20,7 +20,6 @@ const Header = () => {
    </HeaderBg>
    <Info/>
 
-   {/* <Map/> */}
       </>
   )
 }

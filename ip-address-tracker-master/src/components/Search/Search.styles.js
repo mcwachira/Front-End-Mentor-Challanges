@@ -1,8 +1,18 @@
 import styled from "styled-components";
-import img from  '../../images/icon-arrow.svg'
+
+export const searchContainer =  styled.div`
+display:flex ;
+    justify-content: center;
+    flex-direction: row;
+position:relative ;
+width:100% ;
+
+
+
+`
 export const SearchInput = styled.input`
 
-width:25rem;
+width:120%;
 height:3rem;
 border:none ;
 outline:none ;
@@ -11,19 +21,18 @@ position:relative ;
 display:flex ;
 color:grey ;
 font-size: 1.3rem;
-margin:5rem 0 ;
+margin:2rem 0 ;
 
 `
 
 export const SearchButton = styled.button`
-background:url ('${img}') ;
-background-color:#555 ;
-padding:1rem 1.5rem ;
-position: absolute;
-margin-top: 4rem;
-margin-right:13rem ;
-align-self:flex-end ;
+padding:.9rem 1.2rem;
+ background-color: hsl(0, 0%, 17%);
 border-radius:10px ;
 outline:none ;
+position: absolute;
+top:9.3rem;
+left:60%;
+
 `
 

@@ -1,6 +1,7 @@
 import React , {useState, useEffect, useContext} from 'react'
-import { SearchInput,SearchButton } from './Search.styles'
+import { SearchInput, SearchButton, searchContainer } from './Search.styles'
 import { IpContext} from '../context/IpData.context'
+import img from '../../images/icon-arrow.svg'
 import axios from 'axios'
 const Search = () => {
 
@@ -25,8 +26,11 @@ const Search = () => {
 
   return (
     <>
-      <SearchInput placeholder='search for ip' value={searchTerm} onChange={e => setSearchTerm(e.target.value)}/>
-      <SearchButton onClick = {handleClick}/>
+      <searchContainer>
+        <SearchInput placeholder='search for ip' value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
+        <SearchButton onClick={handleClick}><img src={img} alt='arrow'/> </SearchButton>
+      </searchContainer>
+     
     </>
  
   )

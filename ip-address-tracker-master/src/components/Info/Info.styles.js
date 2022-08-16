@@ -19,6 +19,7 @@ position:absolute ;
   margin-top:-5rem ;
 
 
+
 `
 export const InfoDetails =styled.div`
 display:flex ;
@@ -32,10 +33,13 @@ font-size:.9rem ;
 color:grey;
 width:100% ;
 height:15vh ;
-
+h4{
+    font-size:1.2rem ;
+    color: hsl(0, 0%, 17%);
+}
 `
 export const InfoHeading  = styled.h2`
-color:Gray hsl(0, 0%, 17%);
-margin:1rem auto
+margin:1rem auto;
+font-size:1rem ;
 
 `
