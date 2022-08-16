@@ -55,16 +55,11 @@ I was able to understand how to user react-router-dom-v6. I was able to persist 
 
 
 
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
 - [Example resource 1](https://reactrouter.com/) - This  enabled me to understand how to use react-router-dom to create the navigation bar .
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+
 
 
 ## Author
